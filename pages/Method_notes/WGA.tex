@@ -2,42 +2,94 @@
 \begin{document}
 
 \chapter{Summary of packages and methods for bioinformatics}
-
 \label{day:2023-02-15}
-\section*{Genome evolution + genome architecture}
 
-\subsection{PerSVade :\citetitle{schikoratamarit_2022}}
-\begin{itemize}
+\section*{Quality control + alignment metrics}
+
+\section*{Genome evolution + genome architecture + varient calling}
+
+    \subsection{PerSVade :\citetitle{schikoratamarit_2022}}
+    \begin{itemize}
     \item PerSVade - package for detecting structual varients using short read data
     \item Git: https://github.com/Gabaldonlab/perSVade 
     \end{itemize}
-   
-
-    \section*{Genetic Structure and population dynamics}
-    \subsection{STRUCTURE\citetitle{citation}}
+    
+    \subsection{Parliament2 :\citetitle{zarate_2020}}
     \begin{itemize}
+    \item A concensus method which is used to call strutual varients.
+    \item docker image availble at https://github.com/slzarate/parliament2 
+    \end{itemize}
+    
+    \subsection{LUMPY :\citetitle{layer_2014}}
+    \begin{itemize}
+    \item Used to call strutual varients 
+    \end{itemize}
+
+    \subsection{Jellyfish :\citetitle{}}
+    \begin{itemize}
+    \item Measures heterozygosity in whole genomic data
+    \item 
+    \end{itemize}
+
+    \subsection{fastPHASE :\citetitle{}}
+    \begin{itemize}
+    \item Can be used to infer missing haplotypes
+    \item 
+    \end{itemize}
+
+\section*{Genetic Structure and population dynamics}
+    \subsection{STRUCTURE: \citetitle{pritchard_2000}}
+        \begin{itemize}
         \item Utilizes an iterative Baysien algorythm to examine distribution of genetic 
         varients between "populations" and assigns samples to groups based on patterns of 
         variation.
-        \item Derivitives : fastSTRUCTURE etc 
-        \end{itemize} 
-   
-        \subsection{AMOVA\citetitle{citation}}
-    \begin{itemize}
-        \item .......
-        \item ........
+        \item Variations:fastSTRUCTURE etc 
+        \item publications of interest:
+        \item 
         \end{itemize} 
 
-        \subsection{ECODIST\citetitle{citation}}
-    \begin{itemize}
-        \item .......
-        \item ........
+    \subsection{AMOVA: \citetitle{excoffier_1992}}
+        \begin{itemize}
+        \item Analysis of Molecular Variance (AMOVA) produces estimates of variance components and F-statistic analogs, designated here as phi-statistics, reflecting the correlation of haplotypic diversity at different levels of hierarchical subdivision
+        \item Minimum number of markers required .
+        \item Availble in GenoDive \cite{meirmans_2020}, R package/s : stats v3.6.2, poppr
         \end{itemize} 
 
-        \subsection{BA3-SNPsv\citetitle{citation}}
-    \begin{itemize}
-        \item .......
-        \item ........
+    \subsection{BA3-SNPsv: \citetitle{mussmann_2019}}
+         \begin{itemize}
+        \item Modified version of BayesAss3, which is able to use SNP data
+        \item Detects population migrants , dispersal rate, geentic divergence between populations
+        \item Average run time of 32 hours for 10mil MCMC gen 
         \end{itemize} 
+
+    \subsection{Evidente-a: \citetitle{wittepaz_2022}}
+        \begin{itemize}
+        \item Web tool which allows visualization of SNPs which support specific branches within a phylogeny
+        \item Most useful for small genomes such as bacteria
+        \end{itemize}
+            
+    \subsection{GenoDive: \citetitle{meirmans_2020}}
+        \begin{itemize}
+        \item GUI for analysis of population genetic data
+        \item Included: AMOVA, STRUCTURE, VEGAN, INSTRUCT, LFMM etc
+        \end{itemize} 
+
+\section*{Environmental variables and Local adaptaton}
+
+    \subsection{ECODIST: \citetitle{goslee_2007}}
+        \begin{itemize}
+        \item R package which uses a dissimilarity based analysis of ecological data 
+        \item Mantel test
+        \item ordianation and cluster analyses
+        \end{itemize} 
+
+
+\section*{Divergence time estimation and RASP}
+
+
+\section*{Mapping}
+
+
+
 \bib{}
 \end{document}
