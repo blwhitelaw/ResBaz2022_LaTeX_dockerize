@@ -6,6 +6,24 @@
 
 \section*{Quality control + alignment metrics}
 
+    \subsection{GenomeScaope 2.0 :\citetitle{ranallobenavidez_2020}}
+    \begin{itemize}
+    \item Suite of tools to measure genome quality, heterozygosity, size and repetativeness
+    \item 
+    \end{itemize}
+
+    \subsection{RepeatModeller2:\citetitle{flynn_2020}}
+    \begin{itemize}
+    \item 
+    \item 
+    \end{itemize}
+
+    \subsection{RepeatMasker :\citetitle{}}
+    \begin{itemize}
+    \item 
+    \item 
+    \end{itemize}
+
 \section*{Genome evolution + genome architecture + varient calling}
 
     \subsection{PerSVade :\citetitle{schikoratamarit_2022}}
@@ -16,19 +34,14 @@
     
     \subsection{Parliament2 :\citetitle{zarate_2020}}
     \begin{itemize}
-    \item A concensus method which is used to call strutual varients.
+    \item A concensus method which is used to call strutual varients.i
     \item docker image availble at https://github.com/slzarate/parliament2 
+    \item CANNOT GET TO WORK. ERROR "cp: cannot stat '/home/dnanexus/in/None': No such file or directory" devs do not appear to be active
     \end{itemize}
     
     \subsection{LUMPY :\citetitle{layer_2014}}
     \begin{itemize}
     \item Used to call strutual varients 
-    \end{itemize}
-
-    \subsection{Jellyfish :\citetitle{}}
-    \begin{itemize}
-    \item Measures heterozygosity in whole genomic data
-    \item 
     \end{itemize}
 
     \subsection{fastPHASE :\citetitle{}}
@@ -45,13 +58,13 @@
         variation.
         \item Variations:fastSTRUCTURE etc 
         \item publications of interest:
-        \item 
+        \item Requires a minimum f 90 markers, equal sampling and exhibits greater resolution with with a higher degree of differentiation among regions \cite{nelson_2013}
         \end{itemize} 
 
     \subsection{AMOVA: \citetitle{excoffier_1992}}
         \begin{itemize}
         \item Analysis of Molecular Variance (AMOVA) produces estimates of variance components and F-statistic analogs, designated here as phi-statistics, reflecting the correlation of haplotypic diversity at different levels of hierarchical subdivision
-        \item Minimum number of markers required .
+        \item Can produce reliable results with fewer markers than STRUCTURE \cite{nelson_2013}
         \item Availble in GenoDive \cite{meirmans_2020}, R package/s : stats v3.6.2, poppr
         \end{itemize} 
 
@@ -86,10 +99,27 @@
 
 \section*{Divergence time estimation and RASP}
 
+BEAST2
+RASP
+
 
 \section*{Mapping}
 
 
+\section*{Databases}
+
+    \subsection{Rat Genome Database RGD: \citetitle{smith_2020}}
+    \begin{itemize}
+    \item https://rgd.mcw.edu/
+    \end{itemize} 
+
+    \subsection{Global Biodiversity Information Facility (GBIF): \citetitle{smith_2020}}
+    \begin{itemize}
+    \item R.novegicus sighting database ref: GBIF.org (20 February 2023) GBIF Occurrence Download  https://doi.org/10.15468/dl.gjbddq
+    \item R.rattus sighting database ref: GBIF.org (20 February 2023) GBIF Occurrence Download https://doi.org/10.15468/dl.z8n5xq
+    \end{itemize} 
+
+    
 
 \bib{}
-\end{document}
+    \end{document}
