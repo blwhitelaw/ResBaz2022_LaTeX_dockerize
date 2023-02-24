@@ -24,14 +24,21 @@ samtools index RR7428843_10Ksub_sorted.bam
 
 #bcftools multiple 
 
-bcftools mpileup -Ou -f ref.fa prefix1.bam prefix2.bam ... prefixn.bam | bcftools call -Ov -mv -o prefix.multi.var.vcf 
-vcftools --vcf prefix.multi.var.vcf --remove-indels --recode --recode-INFO-all --out prefix.multi.snp
+# bcftools mpileup -Ou -f ref.fa prefix1.bam prefix2.bam ... prefixn.bam | bcftools call -Ov -mv -o prefix.multi.var.vcf 
+# vcftools --vcf prefix.multi.var.vcf --remove-indels --recode --recode-INFO-all --out prefix.multi.snp
+
+bcftools mpileup -Ou -f GCF_015227675.2_mRatBN7.2_genomic.fna RR7428843_10Ksub_sorted.bam | bcftools call -Ov -mv -o RR7428843_10Ksub.multi.var.vcf 
+vcftools --vcf RR7428843_10Ksub.multi.var.vcf  --remove-indels --recode --recode-INFO-all --out  RR7428843_10Ksub.multi.snp
 
 
 #GATK
-gatk Haplotype caller
+#gatk Haplotype caller
 
-
+gatk --java-options "-Xmx4g" HaplotypeCaller  \
+   -R GCF_015227675.2_mRatBN7.2_genomic.fna \
+   -I input.bam \
+   -O output.vcf.gz \
+   -bamout bamout.bam
 
 
 
