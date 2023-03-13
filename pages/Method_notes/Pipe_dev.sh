@@ -40,6 +40,10 @@ gatk --java-options "-Xmx4g" HaplotypeCaller  \
    -O output.vcf.gz \
    -bamout bamout.bam
 
+gatk --java-options "-Xmx4g" HaplotypeCaller -R GCF_015227675.2_mRatBN7.2_genomic.fna  -I ERR7428842_sorted.bam -O ERR7428842_sorted_GATK.vcf.gz
+
+
+java -jar picard.jar MergeVcfs I= *GATK.vcf.gz O=gatk_comb.vcf.gz
 
 
 ##Calling SVs
@@ -52,6 +56,9 @@ docker run -v /Users/brooke/Library/CloudStorage/OneDrive-UniversityofOtago/NCBI
 
 #PerSVade https://github.com/Gabaldonlab/perSVade/wiki/3.-Test-installation 
 
+#Singu install
+singularity build --docker-login ./mikischikora_persvade_v1.02.6.sif docker://mikischikora/persvade:v1.02.6
+
 #Docker installation
 docker pull mikischikora/persvade:v1.02.6
 
@@ -61,3 +68,5 @@ mkdir perSVade_testing_outputs
 docker run -v $PWD/perSVade_testing_outputs:/perSVade/installation/test_installation/testing_outputs mikischikora/persvade:v1.02.6 python -u ./installation/test_installation/test_installation_modules.py
 
 #Run
+
+docker run -v /Users/brooke/Library/CloudStorage/OneDrive-UniversityofOtago/NCBI_pipe_dev/PV_test:/reference_genome_dir -v /Users/brooke/Library/CloudStorage/OneDrive-UniversityofOtago/NCBI_pipe_dev/PV_test:/output_directory -v /Users/brooke/Library/CloudStorage/OneDrive-UniversityofOtago/NCBI_pipe_dev/PV_test:/reads  mikischikora/persvade:v1.02.6 python -u ./scripts/perSVade align_reads -r /output_directory/reference_genome.fasta -o /output_directory -f1 /reads/SRR9221193_sub10k_1.fastq.gz -f2 /reads/SRR9221193_sub10k_2.fastq.gz --fraction_available_mem 0.6
