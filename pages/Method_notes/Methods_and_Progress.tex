@@ -1,0 +1,76 @@
+\documentclass[document.tex]{subfiles}
+\begin{document}
+
+\chapter{Methods and Progress Working Document}
+\label{day:2023-02-15}
+
+\section*{Mitogenomes}
+
+    \subsection{whole mitogenome}
+        \begin{itemize}
+        \item NCBI seq curated for both species and aligned with our data
+        \item Regions of interest i.e. D-loop, Cytb and ND5 were extracted 
+        \item 
+    \end{itemize}
+
+    \subsection{D-loop}
+        \begin{itemize}
+        \item NCBI sequences curated for both species 
+        \item Alignments and networks generated using a Country based and a more New Zealand Focus (NZF) approch
+        \item Gearter variation observed compared to previous study (need to alin these directly, Nova and sanger seq)
+        \item D-loop extracted from whole mitochondrial alignment to be used for poster analyses (Dloop_P)
+    \end{itemize}
+
+    \subsection{Cytb}
+        \begin{itemize}
+        \item NCBI sequences curated for both species 
+        \item Alignments and networks generated using a Country based and a more New Zealand Focus (NZF) approch
+        \item Comparavtivly invarient 
+    \end{itemize}
+        
+    \subsection{ND5}
+        \begin{itemize}
+        \item Shows the greatest variability compared to other genes 
+        \item Accelerated rate of evolution? (HyPhy BUSTED analysis)
+    \end{itemize}
+
+\section*{Anticoagulnt resitance}
+
+    \subsection{VKorc1}
+        \begin{itemize}
+        \item Gene associated with anticoagulant resitance in rattus
+        \item Detected in NZ () only found in R. rattus so far
+        \item Filtered reads were mapped to refence gene approppriate for species and a concensus called with areas exhibiting a depth lower than 3 masked
+        \item Genes were aligned and translated in order to examine sites where resitance mutations have been detected.
+        \item mutations X and X were not found in either species for nay of the samples prersent. 
+        \end{itemize}
+
+    \subsection{Other pathways to resitance}
+        \begin{itemize}
+        \item Thesis by Mary's student
+        \item 
+        \end{itemize}
+
+
+
+\section*{Gene Drive Targets}
+
+    \subsection{SMOK}
+        \begin{itemize}
+        \item Reference genes aquired for Rr from NCBI:
+        \item In order to obtain Rn reference reads fom 30x samples were mapped to Rr reference and alined de novo (looks like some ref are present when BLASTing result from Rrmapping of Rn reads)
+        \item New reference found from above BLAST and will be used as a replacment for the Rr seq: NC_051351.1:64412533-64424489 LOC100911229 [organism=Rattus norvegicus] [GeneID=100911229] [chromosome=16]
+        \item Need to read more about this gene family and the implication of these sequences on gene drive design
+        \end{itemize}
+
+        \subsection{Tiam2}
+        \begin{itemize}
+        \item Reference genes aquired for Rr () and Rn () from NCBI
+        \item Reads aligned for all samples using bwa mem 
+        \item Consensus fasta extracted with low coverage areas (<3) masked
+        \item Next step is alignment, and examination of selection across the gene 
+        \item 
+        \end{itemize}
+
+
+\section*{SNP selection}
